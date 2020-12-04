@@ -1,0 +1,10 @@
+.profile__title {
+  font-family: Roboto Slab, "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  max-width: 530px;
+
+  color: #1A1B22;
+}

@@ -10,7 +10,8 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    main: './src/js/script.js'
+    main: './src/js/index.js',
+    saveArticles: './src/js/saveArticles.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -55,7 +56,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
         }),
@@ -70,8 +71,17 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: false,
             template: './src/index.html',
-            filename: 'index.html'
+            filename: 'index.html',
+            chunks: ['main'],
+
         }),
+        new HtmlWebpackPlugin({
+          inject: false,
+          template: './src/saveArticles.html',
+          filename: 'saveArticles.html',
+          chunks: ['saveArticles'],
+
+      }),
         new WebpackMd5Hash(),
         new webpack.DefinePlugin({
             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)

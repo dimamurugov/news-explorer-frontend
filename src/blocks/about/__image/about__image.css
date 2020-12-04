@@ -1,0 +1,18 @@
+.about__image {
+  border-radius: 1000px;
+  width: 464px;
+  height: 464px;
+}
+@media screen and (max-width: 1240px) {
+  .about__image {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about__image {
+    width: 232px;
+    height: 232px;
+  }
+}

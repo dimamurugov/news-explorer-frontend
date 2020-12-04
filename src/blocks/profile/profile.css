@@ -1,0 +1,9 @@
+@import url(./__name-page/profile__name-page.css);
+@import url(./__title/profile__title.css);
+@import url(./__subtitle/profile__subtitle.css);
+
+.profile {
+  padding-top: 40px;
+  padding-left: 104px;
+  padding-bottom: 56px;
+}

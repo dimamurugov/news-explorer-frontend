@@ -1,0 +1,11 @@
+.about__content {
+  margin-left: 56px;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 1024px) {
+  .about__content {
+    margin-left: 32px;
+    max-width: 424px;
+  }
+}

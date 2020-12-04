@@ -1,0 +1,22 @@
+.header__signin {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  border: 1px solid #FFFFFF;
+
+  border-radius: 100px;
+  color: #FFFFFF;
+  padding: 12px 12px 15px 12px;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  height: 48px;
+}
+
+@media screen and (max-width: 1024px) {
+  .header__signin {
+    font-size: 16px;
+  }
+ }

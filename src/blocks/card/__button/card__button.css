@@ -1,0 +1,14 @@
+@import url('_action/card__button_action_save.css');
+@import url('_action/card__button_action_delete.css');
+
+.card__button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 0px;
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}

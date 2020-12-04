@@ -1,0 +1,8 @@
+.popup__content {
+  width: calc(430px - 72px);
+  position: relative;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 34px 36px 28px 36px;
+}

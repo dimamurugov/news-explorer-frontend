@@ -1,0 +1,10 @@
+.header__out-icon_theme_white {
+
+}
+
+.header__out-icon_theme_white::before {
+  content: url(../../../../images/logOut/logout_white.svg);
+  margin-left: 6px;
+  position: relative;
+  top: 3px;
+}

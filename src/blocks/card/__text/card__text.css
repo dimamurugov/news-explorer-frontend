@@ -1,0 +1,14 @@
+.card__text {
+  font-family: Roboto, "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1A1B22;
+}
+
+@media screen and (max-width: 1024px) {
+  .card__text {
+    margin: 10px 0 0 0;
+  }
+}

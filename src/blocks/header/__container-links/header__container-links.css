@@ -1,0 +1,12 @@
+.header__container-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (max-width: 680px) {
+  .header__container-links {
+    display: none;
+  }
+}

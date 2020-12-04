@@ -1,0 +1,18 @@
+.news-content__title {
+  font-family: Roboto Slab, "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  margin: 80px 0 0 0;
+  color: #1A1B22;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 1024px) {
+  .news-content__title {
+    font-size: 30px;
+    line-height: 34px;
+    margin: 40px 0 0 0;
+  }
+}

@@ -1,0 +1,31 @@
+.news-content__button-uncover {
+  width: 288px;
+  height: 64px;
+  background: #FFFFFF;
+  border-radius: 80px;
+  border: 0px;
+  margin-top: 64px;
+  margin-bottom: 80px;
+
+  font-family: Roboto, "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #1A1B22;
+  cursor: pointer;
+}
+
+.news-content__button-uncover:hover {
+  background: #FFFFFF;
+  opacity: 0.9;
+  border-radius: 80px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .news-content__button-uncover {
+    margin: 22px auto 40px auto;
+  }
+}
