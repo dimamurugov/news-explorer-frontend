@@ -15,6 +15,7 @@
 @import url(./__out-icon/_theme/header__out-icon_theme_white.css);
 @import url(./__out-icon/_theme/header__out-icon_theme_black.css);
 @import url(./__burger/header__burger.css);
+@import url(./__burger/_theme/header__burger_theme_black.css);
 
 .header {
   display: flex;

@@ -9,3 +9,18 @@
     max-width: 424px;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .about__content {
+    margin-left: 0;
+    margin-top: 24px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+  }
+}

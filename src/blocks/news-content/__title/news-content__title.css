@@ -16,3 +16,9 @@
     margin: 40px 0 0 0;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .news-content__title {
+    width: 288px;
+  }
+}

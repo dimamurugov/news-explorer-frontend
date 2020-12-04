@@ -2,3 +2,10 @@
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (max-width: 500px) {
+  .search__content {
+    width: calc(100% - 32px);
+    padding: 16px;
+  }
+}

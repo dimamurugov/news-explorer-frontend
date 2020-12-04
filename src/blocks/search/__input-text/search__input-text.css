@@ -22,4 +22,11 @@
     max-width: 446px;
     padding: 17px;
   }
- }
+}
+
+@media screen and (max-width: 550px) {
+  .search__input-text {
+    width: calc(100% - 36px);
+    padding: 17px;
+  }
+}

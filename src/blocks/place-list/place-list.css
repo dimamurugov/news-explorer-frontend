@@ -13,3 +13,10 @@
     margin-top: 32px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .place-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
