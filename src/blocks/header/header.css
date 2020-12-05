@@ -18,6 +18,7 @@
 @import url(./__burger/_theme/header__burger_theme_black.css);
 
 .header {
+  font-family: Roboto, "Arial", sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

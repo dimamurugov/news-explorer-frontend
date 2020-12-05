@@ -3,6 +3,7 @@
 @import url(./__container/news-content__container.css);
 
 .news-content {
+  font-family: Roboto, "Arial", sans-serif;
   background-color: #F5F6F7;
   margin: auto;
   display: flex;

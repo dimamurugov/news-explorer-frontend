@@ -11,6 +11,7 @@
 
 
 .card {
+  font-family: Roboto, "Arial", sans-serif;
   display: flex;
   flex-direction: column;
   width: 400px;

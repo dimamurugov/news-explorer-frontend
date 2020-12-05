@@ -3,6 +3,7 @@
 @import url(./__subtitle/profile__subtitle.css);
 
 .profile {
+  font-family: Roboto, "Arial", sans-serif;
   padding-top: 40px;
   padding-left: 104px;
   padding-bottom: 56px;

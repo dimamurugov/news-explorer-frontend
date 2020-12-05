@@ -41,7 +41,7 @@ module.exports = {
         loader: 'file-loader?name=./vendor/[name].[ext]'
       },
       {
-        test: /\.(gif|png|jpe?g|svg|webp)$/i,
+        test: /\.(gif|png|jpe?g|svg|webp|ico)$/i,
         use: [
           'file-loader',
           {
@@ -73,14 +73,14 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html',
             chunks: ['main'],
-
+            favicon: "./src/images/favicon.ico",
         }),
         new HtmlWebpackPlugin({
           inject: false,
           template: './src/saveArticles.html',
           filename: 'saveArticles.html',
           chunks: ['saveArticles'],
-
+          favicon: "./src/images/favicon.ico",
       }),
         new WebpackMd5Hash(),
         new webpack.DefinePlugin({
