@@ -10,8 +10,8 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    main: './src/js/index.js',
-    saveArticles: './src/js/saveArticles.js'
+    main: './src/index.js',
+    saveArticles: './src/saved-articles/saveArticles.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -73,14 +73,12 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html',
             chunks: ['main'],
-            favicon: "./src/images/favicon.ico",
         }),
         new HtmlWebpackPlugin({
           inject: false,
           template: './src/saveArticles.html',
           filename: 'saveArticles.html',
           chunks: ['saveArticles'],
-          favicon: "./src/images/favicon.ico",
       }),
         new WebpackMd5Hash(),
         new webpack.DefinePlugin({
