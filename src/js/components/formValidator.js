@@ -3,18 +3,14 @@ export default class FormValidator {
         this.form = form;
         this.errorMessages = errorMessages;
         this.inputs = [...form.querySelectorAll('input')];
-        this.setEventListeners();
+        // this.setEventListeners();
         this.answerMessage = answerMessage;
-        this._isValidate = this._isValidate.bind(this);
-    }
-
-    openAnswerMessage() {
-      this.answerMessage.classList.add();
+        this.isValidate = this.isValidate.bind(this);
     }
 
     //Метод показывает ошибку, если инпуты не проходят валидацию
     checkInputValidity(input, errorMessage) {
-      const valid = this._isValidate(input);
+      this.isValidate(input);
       errorMessage.textContent = input.validationMessage;
     }
 
@@ -29,34 +25,45 @@ export default class FormValidator {
         }
     }
 
-    //Добавлять обработчики
+    //Добавлять обработчики - (_validateForm)
     setEventListeners(){
         this.inputs.forEach(input => {
             input.addEventListener('input', (event) => {
               const errorMessage = input.parentNode.querySelector(`#error-${input.id}`);
               this.checkInputValidity(input, errorMessage);
-              this.setSubmitButtonState(this.form.button, this.inputs.every(this._isValidate));// мы передаем в .every (что по правилу) функцию как колбэк - которая возвращает true\false
+              this.setSubmitButtonState(this.form.button, this.inputs.every(this.isValidate));// мы передаем в .every (что по правилу) функцию как колбэк - которая возвращает true\false
             });
         })
     }
 
-    openAnswerMessage() {
+    //Показать ошибку пришедшию с сервера (setServerError)
+    openAnswerMessage(errorMessage) {
       this.answerMessage.classList.add(`popup__error-message_staty_actively`);
+      this.answerMessage.textContent = errorMessage;
+    }
+    clearAnswerMessage(){
+      this.answerMessage.classList.remove(`popup__error-message_staty_actively`);
     }
 
+    //очищает поля формы ? (_clear)
     _clearErrorMassege() {
         this.inputs.forEach(input => {
             const errorMessage = input.parentNode.querySelector(`#error-${input.id}`);
             errorMessage.textContent = "";
         });
-        console.log(this.answerMessage);
         this.answerMessage.classList.remove(`popup__error-message_staty_actively`);
     }
 
-    _isValidate(input) {
+    checkInputSearch() {
+      return this.inputs[0].value === ''
+    }
+
+    //валидирует полученый элемент (_validateInputElement)
+    isValidate(input) {
         input.setCustomValidity("");
         //Проверка наличия символов
         if (input.validity.valueMissing) {
+          console.log(input);
           input.setCustomValidity(this.errorMessages.empty);
           return false
         }

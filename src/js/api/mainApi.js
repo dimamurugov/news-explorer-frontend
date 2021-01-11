@@ -46,6 +46,6 @@ export default class MainApi {
     if (res.ok) {
         return res.json()
     }
-    return Promise.reject(`Ошибка: ${res.status}`);
+    return res.json().then(Promise.reject.bind(Promise))
 }
 }

@@ -19,5 +19,9 @@ export const popupDone = document.querySelector(".popup_theme_done");
 export const buttonLogOutUser = document.querySelector(".header__signin_theme_button-user");
 export const buttonSavePage = document.querySelector('.header__list-item_type_save-page');
 
+//Поле поиска
+export const buutonSearch = document.querySelector('.search__button');
+export const formSearch = document.querySelector('.search__form');
+export const answerSearchMessage = document.querySelector('.search__error-message');
 
 

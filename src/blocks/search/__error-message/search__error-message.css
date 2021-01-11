@@ -1,0 +1,14 @@
+.search__error-message {
+  font-family: Inter, "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 15px;
+  color: #FF0000;
+  display: block;
+  visibility: hidden;
+
+  position: relative;
+  top: 5px;
+  left: calc(50% - 90px);
+}

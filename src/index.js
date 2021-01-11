@@ -9,17 +9,24 @@ import MainApi from "./js/api/mainApi";
 import Header from "./js/components/header";
 import UserInfo from "./js/components/UserInfo";
 
+//Придумать как валидировать одну кнопку?
+
+
+//Константы
 const { myServerConfig } = require("./js/constants/config");
 
 const { formLogIn, formSignUp, popupLogIn,
   popupSignUp, popupDone, buttonLogIn,
   buttonLogOutUser, buttonLoginInForm, buttonSignUp,
   buttonLoginInMessageDone, logInAnswerMessage, signUpAnswerMessage,
-  buttonSavePage } = require("./js/constants/constants");
+  buttonSavePage, buutonSearch, formSearch, answerSearchMessage
+} = require("./js/constants/constants");
 
 const mainApi = new MainApi(myServerConfig);
 
+//Инстансы
 const validatorLogIn = new FormValidator(formLogIn, errorMessages, logInAnswerMessage);
+validatorLogIn.setEventListeners();
 const logInFormInst = new FormPopup(
   popupLogIn,
   formLogIn,
@@ -31,6 +38,7 @@ const logInFormInst = new FormPopup(
 );
 
 const validatorSignUp = new FormValidator(formSignUp, errorMessages, signUpAnswerMessage);
+validatorSignUp.setEventListeners();
 const signUpFormInst = new FormPopup(
   popupSignUp,
   formSignUp,
@@ -45,7 +53,21 @@ const messagePopup = new Popup(popupDone);
 const userInfoInst = new UserInfo();
 const header = new Header({buttonSavePage: buttonSavePage, buttonUser: buttonLogOutUser, buttonLogIn: buttonLogIn });
 
+const validatorSerachForm = new FormValidator(formSearch, errorMessages, answerSearchMessage);
+const searchFormInst = new FormPopup(undefined, formSearch, buutonSearch, undefined, undefined, undefined, submitSerachForm );
+
 //Функции
+function submitSerachForm(event) {
+  event.preventDefault();
+  if (validatorSerachForm.checkInputSearch()) {
+    validatorSerachForm.openAnswerMessage('Введите ключевое слово');
+    return
+  }
+  validatorSerachForm.clearAnswerMessage();
+  console.log('можно отправлять)');
+
+}
+
 function _setSubmitButtonStateLoginForm() {
   validatorLogIn.setSubmitButtonState(this.form.button, false);
 }
@@ -81,13 +103,12 @@ function submitLoginInFormInst(event) {
         id: res.id,
       }));
       header.render({ isLoggedIn: true, userName: res.name });
-      // console.log(JSON.parse(localStorage.getItem('user')));
       this.close();
 
     })
     .catch((error) => {
       console.log(error);
-      validatorLogIn.openAnswerMessage();
+      validatorLogIn.openAnswerMessage(error.message);
     });
 }
 
@@ -105,8 +126,12 @@ function submitSignUpFormInst(event) {
     })
     .catch((error) => {
       console.log(error);
-      validatorSignUp.openAnswerMessage();
+      validatorSignUp.openAnswerMessage(error.message);
     });
+}
+
+function submitSearchFormInst(event) {
+  event.preventDefault();
 }
 
 function _clearErrorMassegeLoginForm() {
@@ -117,20 +142,25 @@ function _clearErrorMassegeSignUp() {
   validatorSignUp._clearErrorMassege();
 }
 
+//функция проверки аворизирован ли пользователь
 function isAuth() {
-  console.log(userInfoInst.cheackLogIn());
   const userName = userInfoInst.cheackLogIn().name;
-  
+
   if (userInfoInst.cheackLogIn()) {
     console.log('Авторизирован');
     header.render({ isLoggedIn: true, userName: userName });
   }
 }
 
+function logOutUser() {
+  userInfoInst.clearUserInfo();
+  header.render({ isLoggedIn: false});
+}
+
 logInFormInst.setListenersForm();
 signUpFormInst.setListenersForm();
 messagePopup.setListeners();
+searchFormInst.setListenersForm();
 buttonLoginInMessageDone.addEventListener("click", logInFormInst.openForm)
-
+buttonLogOutUser.addEventListener("click", logOutUser);
 isAuth();
-

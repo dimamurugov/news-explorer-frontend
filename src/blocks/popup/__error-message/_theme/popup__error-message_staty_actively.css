@@ -1,3 +1,3 @@
 .popup__error-message_staty_actively {
-  display: block;
+  visibility: visible;
 }
