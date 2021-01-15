@@ -1,11 +1,11 @@
 export default class FormValidator {
     constructor(form, errorMessages, answerMessage) {
-        this.form = form;
-        this.errorMessages = errorMessages;
-        this.inputs = [...form.querySelectorAll('input')];
-        // this.setEventListeners();
-        this.answerMessage = answerMessage;
-        this.isValidate = this.isValidate.bind(this);
+      this.form = form;
+      this.errorMessages = errorMessages;
+      this.inputs = [...form.querySelectorAll('input')];
+      // this.setEventListeners(); - можно и удалить
+      this.answerMessage = answerMessage;
+      this.isValidate = this.isValidate.bind(this);
     }
 
     //Метод показывает ошибку, если инпуты не проходят валидацию
@@ -16,13 +16,13 @@ export default class FormValidator {
 
     //чтобы делать кнопку сабмита активной и неактивной
     setSubmitButtonState(button, state) {
-        if (state) {
-            button.removeAttribute('disabled');
-            button.classList.add(`popup__button_state_actively`);
-        } else {
-            button.setAttribute('disabled', true);
-            button.classList.remove(`popup__button_state_actively`);
-        }
+      if (state) {
+        button.removeAttribute('disabled');
+        button.classList.add(`popup__button_state_actively`);
+      } else {
+        button.setAttribute('disabled', true);
+        button.classList.remove(`popup__button_state_actively`);
+      }
     }
 
     //Добавлять обработчики - (_validateForm)
@@ -41,6 +41,7 @@ export default class FormValidator {
       this.answerMessage.classList.add(`popup__error-message_staty_actively`);
       this.answerMessage.textContent = errorMessage;
     }
+
     clearAnswerMessage(){
       this.answerMessage.classList.remove(`popup__error-message_staty_actively`);
     }

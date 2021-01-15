@@ -3,6 +3,8 @@
   border-radius: 0 0 10px 10px;
   padding: 10px;
   padding: 20px 24px;
+  position: relative;
+  height: 264px;
 }
 
 @media screen and (max-width: 1024px) {

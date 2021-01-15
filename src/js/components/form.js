@@ -1,6 +1,6 @@
 import Popup from './popup';
 
-export default class FormPopup extends Popup {
+export default class Form extends Popup {
     constructor(popup, form, openButton, setSubmitButtonState, clearErrorMassege, funOpenForm, funSubmitForm) {
         super(popup);
         this.form = form;

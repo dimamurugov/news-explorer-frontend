@@ -7,6 +7,7 @@
   color: #FF0000;
   display: block;
   visibility: hidden;
+  width: 200px;
 
   position: relative;
   top: 5px;

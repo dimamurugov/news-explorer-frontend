@@ -5,6 +5,8 @@
   font-size: 26px;
   line-height: 30px;
   color: #1A1B22;
+  max-height: calc(120px);
+  overflow: hidden;
   margin: 12px 0 0 0;
 }
 

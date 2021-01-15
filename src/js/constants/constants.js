@@ -24,4 +24,15 @@ export const buutonSearch = document.querySelector('.search__button');
 export const formSearch = document.querySelector('.search__form');
 export const answerSearchMessage = document.querySelector('.search__error-message');
 
+//Api
+export const baseTime = { min: 60, sec: 60, ms: 1000 };
+export const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа',
+  'сентября', 'октября', 'ноября', 'декабря'];
+
+//newsCardList
+export const preloaderLoading = document.querySelector('.preloader__loading');
+export const preloaderNothing = document.querySelector('.preloader__nothing');
+export const container = document.querySelector('.place-list');
+export const sectionNews = document.querySelector('.news-content');
+export const showMoreButton = document.querySelector('.news-content__button-uncover');
 

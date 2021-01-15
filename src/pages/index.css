@@ -7,10 +7,12 @@
 @import url(../blocks/about/about.css);
 @import url(../blocks/card/card.css);
 @import url(../blocks/news-content/news-content.css);
+@import url(../blocks/news-content/_theme/news-content_theme_active.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/place-list/place-list.css);
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/preloader/preloader.css);
+@import url(../blocks/preloader/_theme/preloader_theme_active.css);
 @import url(../blocks/menu/menu.css);
 
 

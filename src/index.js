@@ -2,32 +2,32 @@ import "./pages/index.css";
 import "./images/favicon.ico";
 
 import Popup from "./js/components/popup";
-import FormPopup from "./js/components/formPopup";
+import Form from "./js/components/form";
 import FormValidator from "./js/components/formValidator";
 import { errorMessages } from "./js/constants/dataNameError";
 import MainApi from "./js/api/mainApi";
+import NewsApi from "./js/api/newsApi";
 import Header from "./js/components/header";
 import UserInfo from "./js/components/UserInfo";
-
-//Придумать как валидировать одну кнопку?
-
+import NewsCard from "./js/components/newsCard";
+import NewsCardList from "./js/components/newsCardList";
 
 //Константы
-const { myServerConfig } = require("./js/constants/config");
+const { myServerConfig, newsApiConfig } = require("./js/constants/config");
 
 const { formLogIn, formSignUp, popupLogIn,
   popupSignUp, popupDone, buttonLogIn,
   buttonLogOutUser, buttonLoginInForm, buttonSignUp,
   buttonLoginInMessageDone, logInAnswerMessage, signUpAnswerMessage,
-  buttonSavePage, buutonSearch, formSearch, answerSearchMessage
+  buttonSavePage, buutonSearch, formSearch, answerSearchMessage,
+  preloaderLoading, preloaderNothing, container, sectionNews, showMoreButton
 } = require("./js/constants/constants");
 
-const mainApi = new MainApi(myServerConfig);
-
 //Инстансы
+const mainApi = new MainApi(myServerConfig);
 const validatorLogIn = new FormValidator(formLogIn, errorMessages, logInAnswerMessage);
 validatorLogIn.setEventListeners();
-const logInFormInst = new FormPopup(
+const logInFormInst = new Form(
   popupLogIn,
   formLogIn,
   buttonLogIn,
@@ -39,7 +39,7 @@ const logInFormInst = new FormPopup(
 
 const validatorSignUp = new FormValidator(formSignUp, errorMessages, signUpAnswerMessage);
 validatorSignUp.setEventListeners();
-const signUpFormInst = new FormPopup(
+const signUpFormInst = new Form(
   popupSignUp,
   formSignUp,
   buttonSignUp,
@@ -49,23 +49,35 @@ const signUpFormInst = new FormPopup(
   submitSignUpFormInst
 );
 
-const messagePopup = new Popup(popupDone);
+const messagePopup = new Popup(popupDone, );
 const userInfoInst = new UserInfo();
 const header = new Header({buttonSavePage: buttonSavePage, buttonUser: buttonLogOutUser, buttonLogIn: buttonLogIn });
 
 const validatorSerachForm = new FormValidator(formSearch, errorMessages, answerSearchMessage);
-const searchFormInst = new FormPopup(undefined, formSearch, buutonSearch, undefined, undefined, undefined, submitSerachForm );
+
+const newsApiInst = new NewsApi(newsApiConfig);
+const newsCartList = new NewsCardList(preloaderLoading, preloaderNothing, container, newsApiInst, createCard, sectionNews, showMoreButton);
+
 
 //Функции
 function submitSerachForm(event) {
   event.preventDefault();
+  newsCartList.renderError(false);
+
   if (validatorSerachForm.checkInputSearch()) {
     validatorSerachForm.openAnswerMessage('Введите ключевое слово');
     return
   }
   validatorSerachForm.clearAnswerMessage();
-  console.log('можно отправлять)');
+  newsCartList.renderLoader(true);
 
+  const keyWord = formSearch.elements.searchPlace.value;
+  newsCartList.renderResults(keyWord);
+}
+
+function createCard(data) {
+  const card = new NewsCard(data);
+  return card.create()
 }
 
 function _setSubmitButtonStateLoginForm() {
@@ -160,7 +172,8 @@ function logOutUser() {
 logInFormInst.setListenersForm();
 signUpFormInst.setListenersForm();
 messagePopup.setListeners();
-searchFormInst.setListenersForm();
+
 buttonLoginInMessageDone.addEventListener("click", logInFormInst.openForm)
 buttonLogOutUser.addEventListener("click", logOutUser);
+buutonSearch.addEventListener("click", submitSerachForm)
 isAuth();

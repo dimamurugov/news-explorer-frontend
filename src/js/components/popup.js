@@ -1,6 +1,7 @@
 export default class Popup {
-    constructor(popup) {
+    constructor(popup, funOpenPopup) {
         this.popup = popup;
+        this.funOpenPopup = funOpenPopup;
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
     }

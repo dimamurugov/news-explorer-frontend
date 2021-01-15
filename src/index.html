@@ -49,14 +49,14 @@
       <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
 
       <form class="search__form" name="search">
-        <input id="search-text" class="search__input-text" type="text" placeholder="Введите тему новости">
+        <input id="search-text" name="searchPlace" class="search__input-text" type="text" placeholder="Введите тему новости">
         <button class="search__button">Искать</button>
         <span id="error-search-text" class="search__error-message">Введите ключевое слово</span>
       </form>
     </div>
   </section>
 
-  <!-- <section class="preloader">
+  <section class="preloader">
 
     <div class="preloader__loading">
       <i class="preloader__circle"></i>
@@ -69,81 +69,19 @@
       <p class="preloader__text">К сожалению по вашему запросу ничего не найдено.</p>
     </div>
 
-  </section> -->
+  </section>
 
-
-  <!-- <section class="news-content">
+  <section class="news-content">
     <div class="news-content__container">
       <h2 class="news-content__title">Результаты поиска</h2>
 
       <div class="place-list">
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
       </div>
 
     </div>
 
     <button class="news-content__button-uncover">Показать еще</button>
-  </section> -->
+  </section>
 
   <section class="about">
     <img class="about__image" src="<%=require('./images/search/me.jpg').default%>" alt="Произошла ошибка при загурзки фото">

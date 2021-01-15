@@ -1,7 +1,7 @@
 import "../pages/saveArticles.css";
 import MainApi from "../js/api/mainApi";
 import Popup from "../js/components/popup";
-import FormPopup from "../js/components/formPopup";
+import Form from "../js/components/form";
 import FormValidator from "../js/components/formValidator";
 import { errorMessages } from "../js/constants/dataNameError";
 import Header from "../js/components/header";
