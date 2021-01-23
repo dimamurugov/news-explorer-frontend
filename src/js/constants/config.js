@@ -1,5 +1,5 @@
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const MY_SERVER = NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://api.murnews.students.nomoreparties.xyz';
+const MY_SERVER = NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://api.murnews.students.nomoreparties.xyz';
 const NEWS_SERVER = NODE_ENV === 'development' ? 'https://newsapi.org/v2/everything?' : 'https://nomoreparties.co/news/v2/everything?';
 
 export const myServerConfig = {
