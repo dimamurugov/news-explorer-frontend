@@ -1,0 +1,16 @@
+@import url(./__name-page/profile__name-page.css);
+@import url(./__title/profile__title.css);
+@import url(./__subtitle/profile__subtitle.css);
+
+.profile {
+  font-family: Roboto, "Arial", sans-serif;
+  padding-top: 40px;
+  padding-left: 104px;
+  padding-bottom: 56px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+    padding: 40px;
+  }
+}

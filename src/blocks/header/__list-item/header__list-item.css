@@ -1,0 +1,7 @@
+.header__list-item {
+  height: calc(100% - 4px);
+  margin: 0 34px 0 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

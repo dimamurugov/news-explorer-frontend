@@ -1,0 +1,38 @@
+@import url(./__title/header__title.css);
+@import url(./__title/_theme/header__title_theme_black.css);
+@import url(./__container-links/header__container-links.css);
+@import url(./__link/header__link.css);
+@import url(./__link/_theme/header__link_theme_select.css);
+@import url(./__link/_theme/header__link_theme_black.css);
+@import url(./__link/_theme/header__link_theme_white.css);
+@import url(./__list-item/header__list-item.css);
+@import url(./__list-item/_select/header__list-item_select.css);
+@import url(./__list-item/_select/_theme/header__list-item_select_theme_black.css);
+@import url(./__list-links/header__list-links.css);
+@import url(./__signin/header__signin.css);
+@import url(./__signin/_theme/header__signin_theme_black.css);
+@import url(./__out-icon/header__out-icon.css);
+@import url(./__out-icon/_theme/header__out-icon_theme_white.css);
+@import url(./__out-icon/_theme/header__out-icon_theme_black.css);
+@import url(./__burger/header__burger.css);
+@import url(./__burger/_theme/header__burger_theme_black.css);
+
+.header {
+  font-family: Roboto, "Arial", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 104px 0 104px;
+  align-items: center;
+  height: 80px;
+  border-bottom: 2px solid rgba(196, 196, 196, 0.01);
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  width: calc(100% - 208px);
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 0 40px;
+    width: calc(100% - 80px);
+  }
+ }

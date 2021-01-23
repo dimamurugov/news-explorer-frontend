@@ -1,0 +1,23 @@
+@import url(./__image/about__image.css);
+@import url(./__content/about__content.css);
+@import url(./__title/about__title.css);
+
+@import url(./__text/about__text.css);
+@import url(./__text/__text_quote/about__text_quote.css);
+
+
+.about {
+  font-family: Roboto, "Arial", sans-serif;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 760px) {
+  .about {
+    flex-direction: column;
+  }
+}

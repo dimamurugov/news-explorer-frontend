@@ -1,0 +1,19 @@
+.card__image {
+  height: 272px;
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .card__image {
+    height: 150px;
+    padding: 10px;
+  }
+}

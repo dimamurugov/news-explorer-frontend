@@ -1,0 +1,13 @@
+.footer__icon-links {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  gap: 27px;
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__icon-links {
+    margin-left: 10px;
+  }
+}

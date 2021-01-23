@@ -1,0 +1,22 @@
+.place-list {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: #F5F6F7;
+}
+
+@media screen and (max-width: 1024px) {
+  .place-list {
+    gap: 8px;
+    margin-top: 32px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .place-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

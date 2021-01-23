@@ -1,0 +1,24 @@
+@import url(__description/card__description.css);
+@import url(__author/card__author.css);
+@import url(__image/card__image.css);
+@import url(./__image/_theme/card__image_theme_index-page.css);
+@import url(__text/card__text.css);
+@import url(__time/card__time.css);
+@import url(__title/card__title.css);
+@import url(__button/card__button.css);
+@import url(__teg/card__teg.css);
+@import url(__button-prompt/card__button-prompt.css);
+
+
+.card {
+  font-family: Roboto, "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 224px;
+  }
+}
