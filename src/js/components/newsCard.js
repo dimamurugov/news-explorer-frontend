@@ -103,6 +103,9 @@ export default class NewsCard {
     event.stopPropagation();
     selectArticle.remove();
     this.delete();
+    location.reload();
+
+    this.removeListernesSavePage();
   }
   //Логика сохранение\удаления статьи
   saveArticle() {
@@ -125,7 +128,8 @@ export default class NewsCard {
 
       this.api.createArticle(articleData)
       .then(res => {
-        console.log(res)
+        console.log('Удалил: ' + res)
+        this.removeListernes();
       })
     }
   }
@@ -180,6 +184,9 @@ export default class NewsCard {
   }
 
   removeListernes() {
-
+    this.saveIcon.removeEventListener("click", this.saveArticle);
+  }
+  removeListernesSavePage() {
+    this.saveIcon.removeEventListener("click", this.deleteCardSavePage);
   }
 }

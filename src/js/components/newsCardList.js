@@ -27,24 +27,22 @@ export default class NewsCartList {
 
   //рендер который идёт после запроса
   renderResults(keyword) {
-    // this.container.innerHTML = '';
-    this.showMoreButton.classList.remove(`news-content__button-uncover_theme_disable`);
+    this.container.innerHTML = '';
 
     this.api.getArticles(keyword)
     .then(res => {
-      this.sectionNews.classList.add(`news-content_theme_active`);
 
       if (res.totalResults === 0) {
         throw new Error()
       }
-
+      this.showMoreButton.classList.remove(`news-content__button-uncover_theme_disable`);
+      this.sectionNews.classList.add(`news-content_theme_active`);
       //Добавляю в статью, её тему
       this.arrResult = res.articles.map(item => {
         item.keyword = keyword;
         return item
       })
 
-      console.log(this.arrResult);
       this.countArticles = res.totalResults;
       this.saveIndexCard = 0;
 

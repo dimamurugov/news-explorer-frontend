@@ -38,9 +38,10 @@ function renderArticlesSavePage() {
 
 function renderProfile(massArticles) {
   userName.textContent = userInfoInst.getUserData().name;
-  countArticles.textContent = massArticles.length + 1;
+  countArticles.textContent = massArticles.length;
+
   //сохраняем юзера теги
-  const arrTag = massArticles.reduce((arrTags, article) => {
+  const arrTags = massArticles.reduce((arrTags, article) => {
     let isTag = arrTags.find(tag => {
       return tag === article.keyword
     })
@@ -50,9 +51,19 @@ function renderProfile(massArticles) {
     return arrTags
   }, [])
 
-  const arrTwoTags = arrTag.slice(0,2);
-  keyWords.textContent = arrTwoTags.join(', ')
-  countKeyWords.textContent = arrTag.length - 2;
+  if (arrTags.length === 0) {
+    keyWords.textContent = '0 статей';
+    return
+  }
+
+  if (arrTags.length > 3) {
+    const arrTwoTags = arrTags.slice(0,2);
+    keyWords.textContent = arrTwoTags.join(', ') + ' и ';
+    countKeyWords.textContent = `${arrTags.length - 2}-м другим`;
+  } else {
+    keyWords.textContent = arrTags.join(', ')
+  }
+
 }
 
 function createCard(data) {

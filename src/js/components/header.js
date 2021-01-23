@@ -7,7 +7,6 @@ export default class Header {
     this.mobileMenu = options.mobileMenu;
     this.buttonCloseMenu = options.buttonCloseMenu
 
-    console.log(this.buttonCloseMenu);
     this.openMobileMenu = this.openMobileMenu.bind(this);
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.setListeners();
@@ -34,9 +33,8 @@ export default class Header {
   }
 
   setListeners() {
-    console.log('НАвесил');
-    console.log(this.buttonBurger);
     this.buttonBurger.addEventListener("click", this.openMobileMenu);
     this.buttonCloseMenu.addEventListener("click", this.closeMobileMenu);
   }
+  
 }
