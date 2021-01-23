@@ -9,7 +9,6 @@ export default class NewsCartList {
 
     this.createCard = createCard;
     this.showMore = this.showMore.bind(this);
-    // this.setListenersList();
   }
 
   //отобразить 3 статьи

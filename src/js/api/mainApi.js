@@ -68,8 +68,6 @@ export default class MainApi {
     })
   }
 
-  //СОЗДАЙ ЗАПРОС КОТОРЫЙ ПРОВЕРЯЕТ ЕСЛИ КУКА В БРАУЗЕРЕ
-  
 
   getIdArticle(link) {
     return this.getUserArticles()
