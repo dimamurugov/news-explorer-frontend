@@ -11,7 +11,7 @@
   font-weight: normal;
 
   position: fixed;
-
+  display: none;
   top: 0;
   left: 0;
   width: 100%;

@@ -8,6 +8,7 @@
 @import url(__button/card__button.css);
 @import url(__teg/card__teg.css);
 @import url(__button-prompt/card__button-prompt.css);
+/* @import url(__button-message/card__button-message.css); */
 
 
 .card {

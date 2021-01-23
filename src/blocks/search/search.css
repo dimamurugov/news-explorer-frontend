@@ -4,6 +4,7 @@
 @import url(./__button/search__button.css);
 @import url(./__content/search__content.css);
 @import url(./__input-text/search__input-text.css);
+@import url(./__error-message/search__error-message.css);
 
 
 .search {

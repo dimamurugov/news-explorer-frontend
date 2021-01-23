@@ -1,0 +1,6 @@
+.card__button_action_click {
+  background-image: url('../../../../images/card/save__click.svg');
+}
+.card__button_action_click:hover {
+  background-image: url('../../../../images/card/save__click.svg');
+}

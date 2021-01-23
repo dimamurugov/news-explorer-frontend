@@ -18,19 +18,19 @@
 
         <ul class="header__list-links">
           <li class="header__list-item header__list-item_select"><a class="header__link header__link_theme_white header__link_theme_select" href="./index.html">Главная</a></li>
-          <li class="header__list-item"><a class="header__link header__link_theme_white" href="./saveArticles.html">Сохранённые статьи</a></li>
+          <li class="header__list-item header__list-item_type_save-page header__list-item_state_disable"><a class="header__link header__link_theme_white" href="./saveArticles.html">Сохранённые статьи</a></li>
         </ul>
 
-        <!-- <button class="header__signin">Авторизоваться</button> -->
-        <button class="header__signin">Грета<span class="header__out-icon header__out-icon_theme_white"></span></button>
+        <button class="header__signin header__signin_theme_button-avtorization header__signin_state_action">Авторизоваться</button>
+        <button class="header__signin header__signin_theme_button-user ">Грета<span class="header__out-icon header__out-icon_theme_white"></span></button>
       </div>
     </header>
 
-    <!-- <div class="menu">
+    <div class="menu">
       <div class="menu__container">
         <header class="header header_theme_menu">
           <h4 class="header__title">NewsExplorer</h4>
-          <img src="<%=require('./images/popup/close.svg').default%>" alt="Иконка скрыть меню">
+          <img class="menu__close" src="<%=require('./images/popup/close.svg').default%>" alt="Иконка скрыть меню">
         </header>
 
         <nav class="menu__nav">
@@ -42,17 +42,16 @@
         </nav>
       </div>
 
-    </div> -->
-
-
+    </div>
 
     <div class="search__content">
       <h1 class="search__title">Что творится в мире?</h1>
       <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
 
       <form class="search__form" name="search">
-        <input class="search__input-text" type="text" placeholder="Введите тему новости">
+        <input id="search-text" name="searchPlace" class="search__input-text" type="text" placeholder="Введите тему новости">
         <button class="search__button">Искать</button>
+        <span id="error-search-text" class="search__error-message">Введите ключевое слово</span>
       </form>
     </div>
   </section>
@@ -72,74 +71,11 @@
 
   </section>
 
-
-
   <section class="news-content">
     <div class="news-content__container">
       <h2 class="news-content__title">Результаты поиска</h2>
 
       <div class="place-list">
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__image card__image_theme_index-page" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-            <button class="card__button card__button_action_save"></button>
-          </div>
-          <div class="card__description">
-            <p class="card__time">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="card__author">Лента.ру</p>
-          </div>
-        </div>
-
       </div>
 
     </div>
@@ -171,6 +107,79 @@
       </ul>
     </nav>
   </footer>
+
+  <div class="popup popup_theme_signin">
+    <div class="popup__content">
+
+      <img class="popup__close" src="<%=require('./images/popup/close.svg').default%>" alt="">
+      <h2 class="popup__title">Вход</h2>
+
+      <form class="popup__form popup__form_theme_signin" action="">
+
+        <div class="popup__input-container">
+          <span class="popup__input-name">Email</span>
+          <input id="email-signin" type="email" name="email" required class="popup__input" placeholder="Введите почту">
+          <span id="error-email-signin" class="popup__error-message">Неправильный формат email</span>
+        </div>
+
+        <div class="popup__input-container">
+          <span class="popup__input-name">Пароль</span>
+          <input id="password-signin" type="password" name="password" required minlength="8" maxlength="30" class="popup__input" placeholder="Введите пароль">
+          <span id="error-password-signin" class="popup__error-message">Неправильный формат пароля</span>
+        </div>
+
+        <span id="popup-error-description" class="popup__error-message popup__error-message_theme_signin">Неправильное имя или пароль</span>
+        <button type="submit" id="submit-signin" name="button" class="button popup__button">Войти</button>
+
+      </form>
+
+      <p class="popup__text">или <button class="popup__link button__signUp">Зарегистрироваться</button></p>
+    </div>
+  </div>
+
+  <div class="popup popup_theme_signup">
+    <div class="popup__content">
+      <img class="popup__close" src="<%=require('./images/popup/close.svg').default%>" alt="иконка выхода">
+      <h2 class="popup__title">Регистрация</h2>
+      <form class="popup__form popup__form_theme_signup" action="">
+
+        <div class="popup__input-container">
+          <span class="popup__input-name">Email</span>
+          <input id="email-signup" type="email" name="email" required class="popup__input" placeholder="Введите почту">
+          <span id="error-email-signup" class="popup__error-message">Неправильный формат email</span>
+        </div>
+
+        <div class="popup__input-container">
+          <span class="popup__input-name">Пароль</span>
+          <input id="password-signup" type="password" name="password" required minlength="8" maxlength="30" class="popup__input" placeholder="Введите пароль">
+          <span id="error-password-signup" class="popup__error-message">Неправильный формат пароля</span>
+        </div>
+
+        <div class="popup__input-container">
+          <span class="popup__input-name">Имя</span>
+          <input id="name" type="text" name="name" required class="popup__input" placeholder="Введите имя">
+          <span id="error-name" class="popup__error-message">Неправильный формат имени</span>
+        </div>
+
+        <span id="popup-error-description" class="popup__error-message popup__error-message_theme_signup">Такой пользователь уже есть</span>
+        <button class="button popup__button" type="submit" id="submit-signup" name="button">Зарегистрироваться</button>
+
+      </form>
+
+      <p class="popup__text">или <button class="popup__link button__logIn-form">Войти</button></p>
+    </div>
+  </div>
+
+
+  <div class="popup popup_theme_done">
+    <div class="popup__content">
+      <img class="popup__close" src="<%=require('./images/popup/close.svg').default%>" alt="">
+      <h2 class="popup__title">Пользователь успешно зарегистрирован!</h2>
+
+      <span class="popup__link popup_link_theme_done">Войти</span>
+    </div>
+  </div>
+
 </body>
 <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </html>
