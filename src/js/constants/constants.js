@@ -36,3 +36,13 @@ export const container = document.querySelector('.place-list');
 export const sectionNews = document.querySelector('.news-content');
 export const showMoreButton = document.querySelector('.news-content__button-uncover');
 
+//savePage
+export const userName = document.querySelector('.profile__user-name');
+export const countArticles = document.querySelector('.profile__count-Articles');
+export const keyWords = document.querySelector('.profile__key-word');
+export const countKeyWords = document.querySelector('.profile__count-topics');
+
+//menu
+export const buttonBurger = document.querySelector('.header__burger');
+export const mobileMenu = document.querySelector('.menu');
+export const buttonCloseMenu = document.querySelector('.menu__close');

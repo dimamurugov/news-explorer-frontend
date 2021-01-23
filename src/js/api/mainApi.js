@@ -23,22 +23,60 @@ export default class MainApi {
         method: 'POST',
         credentials: 'include',
         headers: this.headers,
-        body: JSON.stringify({
-          email: email,
-          password: password
-        })
+        body: JSON.stringify({ email, password })
       }).then(res => {
         return this._checkResponseValidity(res);
       })
   }
 
-  getArticle() {
-    return fetch(`${this.url}/articles`,{
+  getUserArticles() {
+    return fetch(`${this.url}/articles`, {
       method: 'GET',
-      credentials: 'include',
       headers: this.headers,
+      credentials: 'include',
     }).then(res => {
       return this._checkResponseValidity(res);
+    })
+  }
+  createArticle({ keyword, title, text, date, source, link, image }) {
+    return fetch(`${this.url}/articles`, {
+      method: 'POST',
+      headers: this.headers,
+      credentials: 'include',
+      body: JSON.stringify({
+        keyword, title, text, date, source, link, image
+      })
+    }).then(res => this._checkResponseValidity(res))
+  }
+
+  deleteArticleUser(idArticle) {
+    return fetch(`${this.url}/articles/${idArticle}`, {
+      method: 'DELETE',
+      headers: this.headers,
+      credentials: 'include',
+    }).then(res => {
+      return this._checkResponseValidity(res);
+    })
+  }
+  getUserMe() {
+    return fetch(`${this.url}/users/me`,{
+      method: 'GET',
+      headers: this.headers,
+      credentials: 'include',
+    }).then(res => {
+      return this._checkResponseValidity(res);
+    })
+  }
+
+  //СОЗДАЙ ЗАПРОС КОТОРЫЙ ПРОВЕРЯЕТ ЕСЛИ КУКА В БРАУЗЕРЕ
+  
+
+  getIdArticle(link) {
+    return this.getUserArticles()
+    .then(res => {
+      return res.data.find(item => {
+        return item.link === link
+      })
     })
   }
 

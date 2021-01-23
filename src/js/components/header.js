@@ -3,6 +3,14 @@ export default class Header {
     this.buttonSavePage = options.buttonSavePage;
     this.buttonUser = options.buttonUser;
     this.buttonLogIn = options.buttonLogIn;
+    this.buttonBurger = options.buttonBurger;
+    this.mobileMenu = options.mobileMenu;
+    this.buttonCloseMenu = options.buttonCloseMenu
+
+    console.log(this.buttonCloseMenu);
+    this.openMobileMenu = this.openMobileMenu.bind(this);
+    this.closeMobileMenu = this.closeMobileMenu.bind(this);
+    this.setListeners();
   }
 
   render(props) {
@@ -17,5 +25,18 @@ export default class Header {
     this.buttonSavePage.classList.remove(`header__signin_state_action`);//удалили ссылку на "Сохраненнйые статьи"
     this.buttonLogIn.classList.add(`header__signin_state_action`);//добавили кнопку "Авторизации"
     this.buttonUser.classList.remove(`header__signin_state_action`);//удалили кнопку "Юзера"
+  }
+  openMobileMenu() {
+    this.mobileMenu.classList.add('menu_action_open');
+  }
+  closeMobileMenu() {
+    this.mobileMenu.classList.remove('menu_action_open');
+  }
+
+  setListeners() {
+    console.log('НАвесил');
+    console.log(this.buttonBurger);
+    this.buttonBurger.addEventListener("click", this.openMobileMenu);
+    this.buttonCloseMenu.addEventListener("click", this.closeMobileMenu);
   }
 }

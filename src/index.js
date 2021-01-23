@@ -20,11 +20,13 @@ const { formLogIn, formSignUp, popupLogIn,
   buttonLogOutUser, buttonLoginInForm, buttonSignUp,
   buttonLoginInMessageDone, logInAnswerMessage, signUpAnswerMessage,
   buttonSavePage, buutonSearch, formSearch, answerSearchMessage,
-  preloaderLoading, preloaderNothing, container, sectionNews, showMoreButton
+  preloaderLoading, preloaderNothing, container, sectionNews, showMoreButton,
+  buttonBurger, mobileMenu, buttonCloseMenu
 } = require("./js/constants/constants");
 
 //Инстансы
 const mainApi = new MainApi(myServerConfig);
+
 const validatorLogIn = new FormValidator(formLogIn, errorMessages, logInAnswerMessage);
 validatorLogIn.setEventListeners();
 const logInFormInst = new Form(
@@ -51,12 +53,16 @@ const signUpFormInst = new Form(
 
 const messagePopup = new Popup(popupDone, );
 const userInfoInst = new UserInfo();
-const header = new Header({buttonSavePage: buttonSavePage, buttonUser: buttonLogOutUser, buttonLogIn: buttonLogIn });
+const header = new Header({buttonSavePage: buttonSavePage, buttonUser: buttonLogOutUser, buttonLogIn: buttonLogIn,
+   buttonBurger: buttonBurger, mobileMenu: mobileMenu, buttonCloseMenu: buttonCloseMenu });
 
 const validatorSerachForm = new FormValidator(formSearch, errorMessages, answerSearchMessage);
 
+//const searchFormInst = new Form(undefined, formSearch, buutonSearch, undefined, undefined, undefined, submitSerachForm );
+
 const newsApiInst = new NewsApi(newsApiConfig);
 const newsCartList = new NewsCardList(preloaderLoading, preloaderNothing, container, newsApiInst, createCard, sectionNews, showMoreButton);
+
 
 
 //Функции
@@ -76,7 +82,9 @@ function submitSerachForm(event) {
 }
 
 function createCard(data) {
-  const card = new NewsCard(data);
+  let isAuth;
+  userInfoInst.getUserData() ? isAuth = true : isAuth = false;
+  const card = new NewsCard(data, isAuth, mainApi, _getMyID);// второе значение для проверки авторизован ли пользователь
   return card.create()
 }
 
@@ -142,10 +150,6 @@ function submitSignUpFormInst(event) {
     });
 }
 
-function submitSearchFormInst(event) {
-  event.preventDefault();
-}
-
 function _clearErrorMassegeLoginForm() {
   validatorLogIn._clearErrorMassege();
 }
@@ -154,12 +158,15 @@ function _clearErrorMassegeSignUp() {
   validatorSignUp._clearErrorMassege();
 }
 
-//функция проверки аворизирован ли пользователь
-function isAuth() {
-  const userName = userInfoInst.cheackLogIn().name;
+function _getMyID() {
+  return userInfoInst.getUserData().id
+}
 
-  if (userInfoInst.cheackLogIn()) {
+//функция изменения heder в зависимости от регистрации
+function isAuth() {
+  if (userInfoInst.getUserData()) {
     console.log('Авторизирован');
+    const userName = userInfoInst.getUserData().name;
     header.render({ isLoggedIn: true, userName: userName });
   }
 }
@@ -167,12 +174,14 @@ function isAuth() {
 function logOutUser() {
   userInfoInst.clearUserInfo();
   header.render({ isLoggedIn: false});
+  location.reload();
 }
 
 logInFormInst.setListenersForm();
 signUpFormInst.setListenersForm();
 messagePopup.setListeners();
 
+newsCartList.setListenersList();
 buttonLoginInMessageDone.addEventListener("click", logInFormInst.openForm)
 buttonLogOutUser.addEventListener("click", logOutUser);
 buutonSearch.addEventListener("click", submitSerachForm)

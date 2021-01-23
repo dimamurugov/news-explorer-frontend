@@ -3,7 +3,7 @@ export default class UserInfo {
 
   }
 
-  cheackLogIn() {
+  getUserData() {
     const userStr = localStorage.getItem('user');
     const userData = userStr === '' ? '' : JSON.parse(userStr);
     return userData

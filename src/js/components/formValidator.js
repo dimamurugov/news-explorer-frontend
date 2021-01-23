@@ -64,7 +64,6 @@ export default class FormValidator {
         input.setCustomValidity("");
         //Проверка наличия символов
         if (input.validity.valueMissing) {
-          console.log(input);
           input.setCustomValidity(this.errorMessages.empty);
           return false
         }

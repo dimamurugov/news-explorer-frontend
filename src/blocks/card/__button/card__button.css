@@ -1,4 +1,6 @@
 @import url('_action/card__button_action_save.css');
+@import url('_action/card__button_save.css');
+@import url('_action/card__button_action_click.css');
 @import url('_action/card__button_action_delete.css');
 
 .card__button {
@@ -11,4 +13,5 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  background-color: white;
 }

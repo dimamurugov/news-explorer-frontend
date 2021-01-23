@@ -9,37 +9,61 @@ export default class NewsCartList {
 
     this.createCard = createCard;
     this.showMore = this.showMore.bind(this);
-    this.setListenersList();
+    // this.setListenersList();
   }
+
+  //отобразить 3 статьи
   showMore() {
     for (let i = 0; i < 3; i++) {
       if (this.saveIndexCard === this.countArticles) {
         this.showMoreButton.classList.add(`news-content__button-uncover_theme_disable`);
         break
       }
+
       this.addCard(this.createCard(this.arrResult[this.saveIndexCard]));
       this.saveIndexCard++;
     }
   }
-  renderResults(keyWord) {
-    this.container.innerHTML = '';
-    this.api.getArticles(keyWord)
+
+  //рендер который идёт после запроса
+  renderResults(keyword) {
+    // this.container.innerHTML = '';
+    this.showMoreButton.classList.remove(`news-content__button-uncover_theme_disable`);
+
+    this.api.getArticles(keyword)
     .then(res => {
       this.sectionNews.classList.add(`news-content_theme_active`);
+
       if (res.totalResults === 0) {
         throw new Error()
       }
-      console.log(res);
-      this.arrResult = res.articles;
+
+      //Добавляю в статью, её тему
+      this.arrResult = res.articles.map(item => {
+        item.keyword = keyword;
+        return item
+      })
+
+      console.log(this.arrResult);
       this.countArticles = res.totalResults;
       this.saveIndexCard = 0;
 
       this.showMore();
-      this.renderLoader(false);
     })
     .catch(() => {
       this.renderError(true);
     })
+    .finally(() => {
+      this.renderLoader(false);
+    })
+  }
+  //рендер статей пользователя
+  renderArticlesSavePage(arrayArticles) {
+    this.container.innerHTML = '';
+
+    arrayArticles.forEach(article => {
+      this.addCard(this.createCard(article));
+    });
   }
 
   addCard(element) {

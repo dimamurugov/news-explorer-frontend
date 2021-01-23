@@ -9,7 +9,12 @@ export default class NewsApi {
     console.log('Я начал искать');
     const query = getQuery(keyWord);
     return fetch(`${this._url}${query}`)
-      .then((res) => this._requestHandler(res));
+      .then((res) => {
+        return this._requestHandler(res)
+      })
+  }
+  _addKeyWordCard() {
+
   }
 
   _requestHandler(res) {

@@ -24,11 +24,11 @@
     </div>
   </header>
 
-  <!-- <div class="menu">
+  <div class="menu">
     <div class="menu__container">
       <header class="header header_theme_menu">
         <h4 class="header__title">NewsExplorer</h4>
-        <img src="<%=require('./images/popup/close.svg').default%>" alt="Иконка скрыть меню">
+        <img class="menu__close" src="<%=require('./images/popup/close.svg').default%>" alt="Иконка скрыть меню">
       </header>
 
       <nav class="menu__nav">
@@ -40,87 +40,15 @@
       </nav>
     </div>
 
-  </div> -->
+  </div>
 
   <section class="profile">
     <p class="profile__name-page">Сохранённые статьи</p>
-    <h1 class="profile__title">Грета, у вас 5 сохранённых статей</h1>
-    <p class="profile__subtitle">По ключевым словам: <span class="profile__key-word">Природа, Тайга и 2-м другим</span></p>
+    <h1 class="profile__title"><span class="profile__user-name">Грета</span>, у вас <span class="profile__count-Articles">5</span> сохранённых статей</h1>
+    <p class="profile__subtitle">По ключевым словам: <span class="profile__key-word">Природа, Тайга</span> и <span class="profile__count-topics">2</span> другим</p>
   </section>
 
   <section class="place-list news-content_place_saveArticles">
-
-
-
-      <div class="card">
-        <div class="card__image" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-          <div><p class="card__teg">Природа</p></div>
-          <button class="card__button card__button_action_delete"><p class="card__button-prompt">Убрать из сохранённых</p></button>
-        </div>
-        <div class="card__description">
-          <p class="card__time">2 августа, 2019</p>
-          <h3 class="card__title">Национальное достояние – парки</h3>
-          <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          <p class="card__author">Лента.ру</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__image" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-          <div><p class="card__teg">Природа</p></div>
-          <button class="card__button card__button_action_delete"><p class="card__button-prompt">Убрать из сохранённых</p></button>
-        </div>
-        <div class="card__description">
-          <p class="card__time">2 августа, 2019</p>
-          <h3 class="card__title">Национальное достояние – парки</h3>
-          <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          <p class="card__author">Лента.ру</p>
-        </div>
-      </div>
-
-
-      <div class="card">
-        <div class="card__image" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-          <div><p class="card__teg">Природа</p></div>
-          <button class="card__button card__button_action_delete"><p class="card__button-prompt">Убрать из сохранённых</p></button>
-        </div>
-        <div class="card__description">
-          <p class="card__time">2 августа, 2019</p>
-          <h3 class="card__title">Национальное достояние – парки</h3>
-          <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          <p class="card__author">Лента.ру</p>
-        </div>
-      </div>
-
-
-      <div class="card">
-        <div class="card__image" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-          <div><p class="card__teg">Природа</p></div>
-          <button class="card__button card__button_action_delete"><p class="card__button-prompt">Убрать из сохранённых</p></button>
-        </div>
-
-        <div class="card__description">
-          <p class="card__time">2 августа, 2019</p>
-          <h3 class="card__title">Национальное достояние – парки</h3>
-          <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          <p class="card__author">Лента.ру</p>
-        </div>
-      </div>
-
-
-      <div class="card">
-        <div class="card__image" style="background-image: url('https://i.pinimg.com/originals/6a/6e/0f/6a6e0f09e8aa1972b4d63a0c9c57c226.jpg');">
-          <div><p class="card__teg">Природа</p></div>
-          <button class="card__button card__button_action_delete"><p class="card__button-prompt">Убрать из сохранённых</p></button>
-        </div>
-
-        <div class="card__description">
-          <p class="card__time">2 августа, 2019</p>
-          <h3 class="card__title">Национальное достояние – парки</h3>
-          <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          <p class="card__author">Лента.ру</p>
-        </div>
-      </div>
 
   </section>
 
@@ -211,7 +139,6 @@
       <span class="popup__link popup_link_theme_done">Войти</span>
     </div>
   </div>
-
 
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
